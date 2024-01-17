@@ -1,16 +1,18 @@
 import React from "react";
 import { MDBFooter } from "mdb-react-ui-kit";
+import "../style/Footer.scss";
 
 function Footer() {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
-      <div className="me-5 d-none d-lg-block">
-        © 2024 Copyright:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-          Longreal
-        </a>
+    <div className="footerContainer">
+      <div className="styleFooter">
+        <MDBFooter className="text-lg-start text-muted ">
+          <div className="text-center mx-auto me-lg-5">
+            ©2024 Copyright : Longreal
+          </div>
+        </MDBFooter>
       </div>
-    </MDBFooter>
+    </div>
   );
 }
 
