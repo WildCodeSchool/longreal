@@ -9,7 +9,6 @@ function App() {
     <>
       <Navbar />
       <Outlet />
-      <div>Hihi</div>
       <Footer />
     </>
   );
