@@ -9,6 +9,7 @@ import "mdb-react-ui-kit/dist/scss/mdb.dark.scss";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { ContextProvider } from "./context/context";
 import Home from "./pages/Home";
+import UserLocation from "./components/test";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/test",
+        element: <UserLocation />,
       },
     ],
   },
