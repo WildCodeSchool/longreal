@@ -31,7 +31,7 @@ export function ContextProvider({ children }) {
   const getProductsByWeather = async (atchoum) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3000/api/infos`,
+        `http://localhost:3310/api/products/location/weatherdata`,
         atchoum
       );
       console.info(data);
