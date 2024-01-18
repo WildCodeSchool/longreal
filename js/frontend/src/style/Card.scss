@@ -5,6 +5,7 @@
 .card {
   margin: 1rem;
   background-color: white !important;
+  width: 20rem !important;
 }
 .styleCard {
   box-shadow: 5px 5px 5px black(255, 255, 255, 1);
@@ -14,12 +15,28 @@
   display: flex;
   flex-direction: column;
   background-color: #3d3d3d;
+  a:hover {
+    background-color: #3d3d3d;
+  }
 }
 
 .styleText {
   text-align: center;
   font-family: policeTitle;
-  margin: 10px;
+  font-size: medium;
+}
+
+.ripple {
+  position: absolute !important;
+  bottom: 0 !important;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 1024px) {
