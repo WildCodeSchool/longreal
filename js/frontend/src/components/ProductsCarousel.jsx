@@ -24,7 +24,7 @@ function ProductsCarousel({ weatherProducts }) {
   }, [weatherProducts]);
 
   return (
-    <div style={{ minHeight: "70vh" }}>
+    <div style={{ minHeight: "70vh" }} className="carousel-container">
       {freshData?.length && (
         <MDBCarousel showControls showIndicators>
           {freshData?.map((product, index) => (
