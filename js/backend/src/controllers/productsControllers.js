@@ -40,14 +40,7 @@ const getWeatherFilters = async (req, res, next) => {
       console.error(err);
     }
   }
-  if (temp > 20) {
-    try {
-      const calientePero = await tables.products.getHotProducts();
-      resToSend.push(calientePero);
-    } catch (err) {
-      console.error(err);
-    }
-  } else if (temp < 20) {
+  if (temp < 20) {
     try {
       const coldProducts = await tables.products.getColdProducts();
       resToSend.push(coldProducts);
