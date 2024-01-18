@@ -24,19 +24,26 @@ function Card() {
   }, []);
 
   return (
-    <>
+    <div className="card-container">
       {cardData.map((card) => (
         <MDBCard key={card.productId}>
           <MDBCardTitle>{card.productName}</MDBCardTitle>
           <MDBCardImage src={card.image} position="top" alt="..." />
           <MDBCardBody>
+            <MDBCardTitle>{card.title}</MDBCardTitle>
+            <MDBCardText>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </MDBCardText>
+            <MDBBtn href="#">Acheter</MDBBtn>
+
             <MDBBtn href={card.url} target="_blank">
               Voir cet article
             </MDBBtn>
           </MDBCardBody>
         </MDBCard>
       ))}
-    </>
+    </div>
   );
 }
 export default Card;
