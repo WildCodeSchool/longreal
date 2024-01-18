@@ -10,7 +10,7 @@ function ProductsCarousel() {
   const { weatherProducts } = useTheContext();
 
   return (
-    <div>
+    <div className="carousel-container">
       <MDBCarousel showControls showIndicators>
         {weatherProducts.map((product) => (
           <MDBCarouselItem itemId={1} key={product?.productId}>
