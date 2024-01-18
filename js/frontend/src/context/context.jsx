@@ -6,6 +6,7 @@ const theContext = createContext();
 
 export function ContextProvider({ children }) {
   const [location, setLocation] = useState(null);
+  const [weatherProducts, setWeatherProducts] = useState();
 
   const handleGetLocation = () => {
     if (navigator.geolocation) {
@@ -34,11 +35,13 @@ export function ContextProvider({ children }) {
         `http://localhost:3310/api/products/location/weatherdata`,
         atchoum
       );
-      console.info(data);
+      setWeatherProducts(data);
+      console.log(data);
     } catch (err) {
       console.error(err);
     }
   };
+  console.log(weatherProducts);
   const ultimateWetherGettingFromTheApiWhithLove = async () => {
     try {
       const { data } = await axios.get(
@@ -62,8 +65,9 @@ export function ContextProvider({ children }) {
       ultimateWetherGettingFromTheApiWhithLove,
       location,
       setLocation,
+      setWeatherProducts,
     }),
-    [location]
+    [location, weatherProducts]
   );
   return (
     <theContext.Provider value={memoizedUserValue}>
