@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS lelongreal;
 USE lelongreal;
 
 CREATE TABLE products (
-    productId INT PRIMARY KEY AUTO_INCREMENT, brand VARCHAR(255), productName VARCHAR(255), productCategory VARCHAR(255), weather VARCHAR(255), season VARCHAR(255), temperature VARCHAR(255), image VARCHAR(255), price DOUBLE, url VARCHAR(255)
+    productId INT PRIMARY KEY AUTO_INCREMENT, brand VARCHAR(255), productName VARCHAR(255), productCategory VARCHAR(255), weather VARCHAR(255), season VARCHAR(255), temperature VARCHAR(255), image VARCHAR(500), price DOUBLE, url VARCHAR(255)
 );
 
 INSERT INTO
@@ -188,4 +188,92 @@ INSERT INTO
     )
 VALUES (
         "L'Oreal Paris", "Lot de 2 – Eyeliner Infaillible Intense Noir - waterproof et tenue jusqu'à 36H", "Yeux", "Pluie", "Toutes", NULL, "https://www.loreal-paris.fr/dw/image/v2/BHHX_PRD/on/demandware.static/-/Sites-lorealparis-fr-catalog/default/dwb6f39b48/ProductImages/OAP1000509/OAP1000509_1.jpg?sw=465&sh=465&sm=cut&sfrm=jpg&q=70", 22.60, "https://www.loreal-paris.fr/maquillage/yeux/lot-de-2-%E2%80%93-eyeliner-infaillible-intense-noir---waterproof-et-tenue-jusqu-a-36h/OAP1000509.html"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "La Roche Posay", "HYDRAPHASE HA LÉGÈRE CRÈME HYDRATANTE VISAGE À L'ACIDE HYALURONIQUE", "Visage", NULL, "Automne-Hiver", NULL, "https://www.laroche-posay.fr/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-lrp-ng-master-catalog/fr_FR/dwbe0776ec/LRP_Product/Hydraphase/3337875731638_Hydraphase-Hyaluronic-Acid-Light-Moisturiser_50ml_01_La-Roche-Posay.jpg?sw=465&sh=465&sm=cut&sfrm=jpg&q=70", 21, "https://www.laroche-posay.fr/gammes/visage/hydraphase/hydraphase-ha-legere-creme-hydratante-visage-a-l-acide-hyaluronique/LRP_078.html"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "Nyx", "PALETTE FARDS À PAUPIÈRES - ULTIMATE SHADOW", "Yeux", NULL, "Automne-Hiver", NULL, "https://www.nyxcosmetics.fr/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dwb6ed2d5b/ProductImages/Eyes/Ultimate_Shadow_Palette/800897182755_ultimateshadowpalette_phoenix_main.jpg?sw=375&sh=375&sm=cut&sfrm=jpg&q=70", 17.95, "https://www.nyxcosmetics.fr/yeux/palette-fards-a-paupieres---ultimate-shadow/NYX_337.html?dwvar_NYX__337_color=PHOENIX-EU"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "Nyx", "PALETTE FARDS À PAUPIÈRES - ULTIMATE SHADOW", "Yeux", NULL, "Printemps-Eté", NULL, "https://www.nyxcosmetics.fr/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dwd1703180/ProductImages/Eyes/Ultimate_Shadow_Palette/800897017651_ultimateshadowpalette_brights_main.jpg?sw=375&sh=375&sm=cut&sfrm=jpg&q=70", 17.95, "https://www.nyxcosmetics.fr/yeux/palette-fards-a-paupieres---ultimate-shadow/NYX_337.html?dwvar_NYX__337_color=Brights"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "Nyx", "ROUTINE SUMMERPROOF", "Routines Makeup", NULL, "Toutes", "Chaud", "https://www.nyxcosmetics.fr/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dwcf845968/ProductImages/ProductSets/2021/Summer%20kits/NYXSET_049.jpg?sw=465&sfrm=jpg&q=70", 37.05, "https://www.nyxcosmetics.fr/promotions/routines-makeup/routine-summerproof/NYXSET_049.html"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "Garnier", "Lait Fluide Hydratant Très Haute Protection FPS 50+", "Solaire", "Soleil", "Toutes", "Chaud", "https://www.garnier.fr/-/media/project/loreal/brand-sites/garnier/emea/fr/fr-fr/complementary-images-030422/eco-conu-adultes-50/eco-designed-50.png?w=500&rev=f265acfce890403ba4cb4e43532e2689&hash=19C70D9097C95E28D9B3DE9D9744BF23", NULL, "https://www.garnier.fr/nos-marques/soin-solaire/ambre-solaire/lait-haute-protection-eco-con%C3%A7u/lait-haute-protection-eco-con%C3%A7u-fps-50"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "La Roche Posay", "ANTHELIOS CRÈME SOLAIRE CORPS EN BRUME SPF50+", "Solaire", "Soleil", "Toutes", "Chaud", "https://www.laroche-posay.fr/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-lrp-ng-master-catalog/fr_FR/dwe8ca3bb8/LRP_Product/Anthelios/3337872420153_Anthelios-Ultra-Light-Body-Mist-SPF50+_200ml_01_La-Roche-Posay.jpg?sw=465&sh=465&sm=cut&sfrm=jpg&q=70", 22, "https://www.laroche-posay.fr/gammes/solaires/anthelios/anthelios-creme-solaire-corps-en-brume-spf50-/LRP_007.html"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "Garnier", "Lait Fluide Hydratant Haute Protection FPS 30", "Solaire", "Soleil", "Toutes", "Chaud", "https://www.garnier.fr/-/media/project/loreal/brand-sites/garnier/emea/fr/fr-fr/complementary-images-030422/eco-conu-adultes-30/eco-designed-30.png?w=500&rev=beb5c220f38b48198c21428c41e531db&hash=21282D30D5BA3C439DE7A7800F72DCEC", NULL, "https://www.garnier.fr/nos-marques/soin-solaire/ambre-solaire/lait-haute-protection-eco-con%C3%A7u/lait-haute-protection-eco-concu-fps-30"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "La Roche Posay", "ANTHELIOS CRÈME SOLAIRE LAIT HYDRATANT TUBE ECO-RESPONSABLE SPF30", "Solaire", "Soleil", "Toutes", "Chaud", "https://www.laroche-posay.fr/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-lrp-ng-master-catalog/fr_FR/dw0ddedcc1/LRP_Product/Anthelios/3337875761116_Anthelios-Hydrating-Body-Lotion-SPF30_250ml_01_La-Roche-Posay.jpg?sw=465&sh=465&sm=cut&sfrm=jpg&q=70", 22.50, "https://www.laroche-posay.fr/gammes/solaires/anthelios/anthelios-creme-solaire-lait-hydratant-tube-eco-responsable-spf30/LRP_001.html"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "Garnier", "Huile protectrice sublimatrice de bronzage FPS20", "Solaire", "Soleil", "Toutes", "Chaud", "https://www.garnier.fr/-/media/project/loreal/brand-sites/garnier/emea/fr/products/ambre-solaire/ideal-bronze/huile-protectrice-sublimatrice-de-bronzage-fps20.png?w=500&rev=6cadec94dfc4482294a57a6db871ed08&hash=674CF831D7CE9A5D0087337BE0B758B4", NULL, "https://www.garnier.fr/nos-marques/soin-solaire/ambre-solaire/ideal-bronze/huile-protectrice-sublimatrice-de-bronzage-fps20"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "Garnier", "Huile protectrice sublimatrice de bronzage FPS15", "Solaire", "Soleil", "Toutes", "Chaud", "https://www.garnier.fr/-/media/project/loreal/brand-sites/garnier/emea/fr/products/ambre-solaire/ideal-bronze/huile-protectrice-sublimatrice-de-bronzage-fps15.png?w=500&rev=7ca0f36847094377bffe5dc73f18feb0&hash=E9D8D2AF9F1AC74FF009CD5C595DE1AD", NULL, "https://www.garnier.fr/nos-marques/soin-solaire/ambre-solaire/ideal-bronze/huile-protectrice-sublimatrice-de-bronzage-fps15"
+    );
+
+INSERT INTO
+    products (
+        brand, productName, productCategory, weather, season, temperature, image, price, url
+    )
+VALUES (
+        "La Roche Posay", "ANTHELIOS UVMUNE 400 CRÈME SOLAIRE FLUIDE INVISIBLE SANS PARFUM", "Solaire", "Soleil", "Toutes", "Chaud", "https://www.laroche-posay.fr/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-lrp-ng-master-catalog/fr_FR/dwc7281e21/LRP_Product/Anthelios/3337875797597_Anthelios-UVMune-400-Invisible-Fluid-SPF50+-Sun-Cream_50ml_01_La-Roche-Posay.jpg?sw=465&sh=465&sm=cut&sfrm=jpg&q=70", 16.90, "https://www.laroche-posay.fr/gammes/solaires/anthelios/anthelios-uvmune-400-creme-solaire-fluide-invisible-sans-parfum/LRP_026.html"
     );
