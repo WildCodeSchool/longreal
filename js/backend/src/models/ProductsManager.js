@@ -17,6 +17,20 @@ class ProductsManager extends AbstractManager {
     );
     return rows[0];
   }
+
+  async getRainyProducts() {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE weather = 'Pluie'`
+    );
+    return rows;
+  }
+
+  async getSunnyProducts() {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} WHERE weather = 'Soleil'`
+    );
+    return rows;
+  }
 }
 
 module.exports = ProductsManager;
