@@ -38,7 +38,7 @@ Ce projet est sous licence MIT.
 
 ## Contributeurs
 
-Florian BRUN
-Victor GARCIA
-Anaëlle CAUVIN
-Lucas BORDES
+Florian BRUN  
+Victor GARCIA  
+Anaëlle CAUVIN  
+Lucas BORDES  
