@@ -1,53 +1,46 @@
-@font-face {
-  font-family: policeTitle;
-  src: url("src/assets/CamptonSemiBold.otf");
-}
-.card {
-  margin: 1rem;
-  background-color: white !important;
-  width: 20rem !important;
-}
-.styleCard {
-  box-shadow: 5px 5px 5px black(255, 255, 255, 1);
-}
+.card-container {
+  @font-face {
+    font-family: policeTitle;
+    src: url("src/assets/CamptonSemiBold.otf");
+  }
+  .card {
+    margin: 1rem;
+    background-color: white !important;
+    width: 20rem !important;
+  }
+  .styleCard {
+    box-shadow: 5px 5px 5px black(255, 255, 255, 1);
+  }
 
-.colorButton {
-  display: flex;
-  flex-direction: column;
-  background-color: #3d3d3d;
-}
+  .colorButton {
+    display: flex;
+    flex-direction: column;
+  }
 
-.colorButton:hover {
-  background-color: #3d3d3d;
-}
-.styleText {
-  margin-top: 10px;
-  text-align: center;
-  font-family: policeTitle;
-  font-size: medium;
-}
+  .styleText {
+    text-align: center;
+    font-family: policeTitle;
+    font-size: medium;
+  }
 
-.ripple {
-  position: absolute !important;
-  bottom: 0 !important;
-  margin-bottom: 1rem;
-}
+  .ripple {
+    position: absolute !important;
+    bottom: 0 !important;
+    margin-bottom: 1rem;
+  }
 
-.card-body {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+  .card-body {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-.cardAlign {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-@media screen and (min-width: 850px) {
-  .cardAlign {
-    justify-content: space-around;
+  @media screen and (min-width: 1024px) {
+    .cardAlign {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
   }
 }
