@@ -39,10 +39,14 @@
   flex-direction: column;
 }
 
-@media screen and (min-width: 1024px) {
+.cardAlign {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 850px) {
   .cardAlign {
-    display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
   }
 }
