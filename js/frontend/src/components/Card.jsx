@@ -1,34 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   MDBCard,
   MDBCardBody,
   MDBCardTitle,
-  MDBCardText,
   MDBCardImage,
   MDBBtn,
 } from "mdb-react-ui-kit";
 
-const cardData = [
-  {
-    id: 1,
-    imageSrc: "https://mdbootstrap.com/img/new/standard/nature/184.webp",
-    title: "Card title 1",
-    text: "Some quick example text for card 1.",
-  },
-  {
-    id: 2,
-    imageSrc: "https://mdbootstrap.com/img/new/standard/nature/184.webp",
-    title: "Card title 2",
-    text: "Some quick example text for card 2.",
-  },
-];
+function Card() {
+  const [cardData, setCardData] = useState([]);
 
-export default function Card() {
+  useEffect(() => {
+    async function getCard() {
+      try {
+        const response = await fetch("http://localhost:3310/api/products");
+        const products = await response.json();
+        setCardData(products);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    getCard();
+  }, []);
+
   return (
     <div className="card-container">
       {cardData.map((card) => (
-        <MDBCard key={card.id}>
-          <MDBCardImage src={card.imageSrc} position="top" alt="..." />
+        <MDBCard key={card.productId}>
+          <MDBCardTitle>{card.productName}</MDBCardTitle>
+          <MDBCardImage src={card.image} position="top" alt="..." />
           <MDBCardBody>
             <MDBCardTitle>{card.title}</MDBCardTitle>
             <MDBCardText>
@@ -36,9 +36,14 @@ export default function Card() {
               bulk of the card's content.
             </MDBCardText>
             <MDBBtn href="#">Acheter</MDBBtn>
+
+            <MDBBtn href={card.url} target="_blank">
+              Voir cet article
+            </MDBBtn>
           </MDBCardBody>
         </MDBCard>
       ))}
     </div>
   );
 }
+export default Card;
