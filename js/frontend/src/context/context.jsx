@@ -13,6 +13,8 @@ export function ContextProvider({ children }) {
     setWeatherProducts([].concat(...loaderData));
   }, [loaderData]);
 
+  console.log(weatherProducts);
+
   const memoizedUserValue = useMemo(
     () => ({
       setWeatherProducts,
