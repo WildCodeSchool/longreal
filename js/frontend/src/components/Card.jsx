@@ -25,7 +25,7 @@ const cardData = [
 
 export default function Card() {
   return (
-    <>
+    <div className="card-container">
       {cardData.map((card) => (
         <MDBCard key={card.id}>
           <MDBCardImage src={card.imageSrc} position="top" alt="..." />
@@ -35,10 +35,10 @@ export default function Card() {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </MDBCardText>
-            <MDBBtn href="#">Button</MDBBtn>
+            <MDBBtn href="#">Acheter</MDBBtn>
           </MDBCardBody>
         </MDBCard>
       ))}
-    </>
+    </div>
   );
 }

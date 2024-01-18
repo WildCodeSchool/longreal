@@ -13,3 +13,12 @@
   padding: 0 !important;
   margin: 0 !important;
 }
+
+@media screen and (min-width: 1440px) {
+  .styleFooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+  }
+}

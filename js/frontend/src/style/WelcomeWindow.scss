@@ -5,7 +5,9 @@
   padding: 0.5rem;
 }
 
-.hello-title {
+.hello-title,
+h5 {
+  font-family: "Hanken Grotesk", sans-serif;
   font-size: 22px;
 }
 
@@ -16,4 +18,46 @@
 .pres-sentence {
   text-align: center;
   margin: 1rem 0rem;
+}
+
+@media screen and (min-width: 375px) {
+  .welcome-container {
+    margin: 1rem 2rem;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .welcome-container {
+    margin: 1rem 2rem;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 728px) {
+  .welcome-container {
+    margin: 1rem 10rem;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .welcome-container {
+    margin: 2rem 20rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .welcome-container {
+    margin: 2rem 30rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .welcome-container {
+    margin: 2rem 55rem;
+    padding: 3rem;
+  }
 }

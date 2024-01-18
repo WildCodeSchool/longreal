@@ -9,17 +9,17 @@ import { useTheContext } from "../context/context";
 function ProductsCarousel() {
   const { weatherProducts } = useTheContext();
   console.log(weatherProducts);
-  // const [products, setProducts] = useState();
+  const [products, setProducts] = useState();
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3310/api/products")
-  //     .then((response) => response.json())
-  //     .then((data) => setProducts(data))
-  //     .catch((err) => err);
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:3310/api/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((err) => err);
+  }, []);
 
   return (
-    <div>
+    <div className="carousel-container">
       {products ? (
         <MDBCarousel showControls showIndicators>
           {products.map((product) => {
@@ -30,8 +30,8 @@ function ProductsCarousel() {
               >
                 <img src={product?.image} className="d-block w-100" alt="..." />
                 <MDBCarouselCaption>
-                  <h5>First slide label</h5>
-                  <p>
+                  <h5 className="slides-label">First slide label</h5>
+                  <p className="slides-description">
                     Nulla vitae elit libero, a pharetra augue mollis interdum.
                   </p>
                 </MDBCarouselCaption>
@@ -46,8 +46,10 @@ function ProductsCarousel() {
             />
 
             <MDBCarouselCaption>
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h5 className="slides-label">Second slide label</h5>
+              <p className="slides-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
             </MDBCarouselCaption>
           </MDBCarouselItem>
           <MDBCarouselItem itemId={3}>
@@ -57,8 +59,8 @@ function ProductsCarousel() {
               alt="..."
             />
             <MDBCarouselCaption>
-              <h5>Third slide label</h5>
-              <p>
+              <h5 className="slides-label">Third slide label</h5>
+              <p className="slides-description">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </MDBCarouselCaption>
@@ -70,8 +72,8 @@ function ProductsCarousel() {
               alt="..."
             />
             <MDBCarouselCaption>
-              <h5>Third slide label</h5>
-              <p>
+              <h5 className="slides-label">Third slide label</h5>
+              <p className="slides-description">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </MDBCarouselCaption>
@@ -83,8 +85,8 @@ function ProductsCarousel() {
               alt="..."
             />
             <MDBCarouselCaption>
-              <h5>Third slide label</h5>
-              <p>
+              <h5 className="slides-label">Third slide label</h5>
+              <p className="slides-description">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </MDBCarouselCaption>
@@ -96,8 +98,8 @@ function ProductsCarousel() {
               alt="..."
             />
             <MDBCarouselCaption>
-              <h5>Third slide label</h5>
-              <p>
+              <h5 className="slides-label">Third slide label</h5>
+              <p className="slides-description">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </MDBCarouselCaption>
@@ -109,8 +111,8 @@ function ProductsCarousel() {
               alt="..."
             />
             <MDBCarouselCaption>
-              <h5>Third slide label</h5>
-              <p>
+              <h5 className="slides-label">Third slide label</h5>
+              <p className="slides-description">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </MDBCarouselCaption>
