@@ -49,8 +49,6 @@ const getWeatherFilters = async (req, res, next) => {
     }
   }
   res.json(resToSend);
-  console.log(resToSend);
-  console.log(weatherInfos);
   next();
 };
 

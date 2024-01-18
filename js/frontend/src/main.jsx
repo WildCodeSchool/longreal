@@ -1,145 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import axios from "axios";
 import App from "./App";
-import { ContextProvider } from "./context/context";
 import "./style/index.scss";
-
-// function
-const handleGetLocation = () => {
-  return new Promise((resolve) => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          resolve({ latitude, longitude });
-        },
-        (error) => {
-          console.error("Error getting user location:", error);
-          resolve(null);
-        }
-      );
-    } else {
-      console.error("Geolocation is not supported by your browser");
-      resolve(null);
-    }
-  });
-};
-
-const handleDubaiLocation = () => {
-  return new Promise((resolve) => {
-    resolve({
-      latitude: 25.276987,
-      longitude: 55.296249,
-    });
-  });
-};
-
-const handleBudapestLocation = () => {
-  return new Promise((resolve) => {
-    resolve({
-      latitude: 47.497913,
-      longitude: 19.040236,
-    });
-  });
-};
-
-const ultimateWeatherGettingFromTheApiWhithLove = async (getDubey) => {
-  const location = getDubey
-    ? await handleDubaiLocation()
-    : await handleGetLocation();
-
-  console.log(location);
-
-  try {
-    const { data } = await axios.get(
-      `https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max&timezone=Europe%2FBerlin`
-    );
-    const toPost = {
-      maxT: data.daily.temperature_2m_max[0],
-      minT: data.daily.temperature_2m_min[0],
-      uV: data.daily.uv_index_max[0],
-      wCode: data.daily.weather_code[0],
-    };
-    return toPost;
-  } catch (err) {
-    console.error(err);
-  }
-  return null;
-};
-
-const ultimateWeatherGettingFromTheApiWhithLoveV2 = async () => {
-  const location = await handleBudapestLocation();
-  console.log(location);
-  try {
-    const { data } = await axios.get(
-      `https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max&timezone=Europe%2FBerlin`
-    );
-    const toPost = {
-      maxT: data.daily.temperature_2m_max[0],
-      minT: data.daily.temperature_2m_min[0],
-      uV: data.daily.uv_index_max[0],
-      wCode: data.daily.weather_code[0],
-    };
-    return toPost;
-  } catch (err) {
-    console.error(err);
-  }
-  return null;
-};
-
-const getProductsByWeather1 = async (getDubay) => {
-  try {
-    const { data } = await axios.post(
-      `http://localhost:3310/api/products/location/weatherdata`,
-      await ultimateWeatherGettingFromTheApiWhithLove(getDubay)
-    );
-    return data;
-  } catch (err) {
-    console.error(err);
-  }
-
-  return [];
-};
-
-const getProductsByWeather2 = async () => {
-  try {
-    const { data } = await axios.post(
-      `http://localhost:3310/api/products/location/weatherdata`,
-      await ultimateWeatherGettingFromTheApiWhithLoveV2()
-    );
-    return data;
-  } catch (err) {
-    console.error(err);
-  }
-  return null;
-};
+import axios from "axios";
+import { WeatherProvider } from "./context/WeatherContext";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      // <ContextProvider>
+      <WeatherProvider>
         <App />
-      // </ContextProvider>
+      </WeatherProvider>
     ),
-    loader: async () => {
-      return getProductsByWeather1(false);
-    },
   },
   {
     path: "/:param",
     element: (
-      // <ContextProvider>
-      <App />
-      // </ContextProvider>
+      <WeatherProvider>
+        <App />
+      </WeatherProvider>
     ),
-    loader: async ({ params }) => {
-      return params?.param === "dubai"
-        ? getProductsByWeather1(true)
-        : getProductsByWeather2();
-    },
   },
 ]);
 

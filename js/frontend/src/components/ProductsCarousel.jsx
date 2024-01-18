@@ -15,7 +15,6 @@ function ProductsCarousel({ weatherProducts }) {
     }
 
     setIsRefreshing(true);
-    console.log(1, freshData, weatherProducts);
     setFreshData([]);
 
     setTimeout(() => {
