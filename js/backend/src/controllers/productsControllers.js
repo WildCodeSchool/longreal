@@ -31,7 +31,7 @@ const getWeatherFilters = async (req, res, next) => {
       console.error(err);
     }
   }
-  if (weatherInfos.uV > 0.5) {
+  if (weatherInfos.uV > 5) {
     try {
       const protectFromSunCauseItsDangerous =
         await tables.products.getSunnyProducts();
@@ -42,7 +42,7 @@ const getWeatherFilters = async (req, res, next) => {
   }
   if (temp > 20) {
     try {
-      const calientePero = await tables.products.getHiotProducts();
+      const calientePero = await tables.products.getHotProducts();
       resToSend.push(calientePero);
     } catch (err) {
       console.error(err);
