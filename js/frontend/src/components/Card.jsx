@@ -25,7 +25,7 @@ function Card() {
   }, []);
 
   return (
-    <div className="cardAlign">
+    <div className="card-container">
       {cardData.map((card) => (
         <MDBCard className="styleCard" key={card.productId}>
           <MDBCardTitle className="styleText">{card.productName}</MDBCardTitle>

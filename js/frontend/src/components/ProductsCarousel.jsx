@@ -10,19 +10,17 @@ function ProductsCarousel() {
   const { weatherProducts } = useTheContext();
 
   return (
-    <div>
-      <MDBCarousel showControls showIndicators>
-        {weatherProducts.map((product) => (
-          <MDBCarouselItem itemId={1} key={product?.productId}>
-            <img src={product?.image} className="d-block w-100" alt="..." />
-            <MDBCarouselCaption>
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </MDBCarouselCaption>
-          </MDBCarouselItem>
-        ))}
-      </MDBCarousel>
-    </div>
+    <MDBCarousel showControls showIndicators>
+      {weatherProducts?.map((product, index) => (
+        <MDBCarouselItem itemId={index + 1} key={product?.productName}>
+          <img src={product?.image} className="d-block w-100" alt="..." />
+          <MDBCarouselCaption>
+            <h5>First slide label</h5>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </MDBCarouselCaption>
+        </MDBCarouselItem>
+      ))}
+    </MDBCarousel>
   );
 }
 
