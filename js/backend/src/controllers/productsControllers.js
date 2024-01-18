@@ -40,9 +40,25 @@ const getWeatherFilters = async (req, res, next) => {
       console.error(err);
     }
   }
+  if (temp > 20) {
+    try {
+      const calientePero = await tables.products.getHiotProducts();
+      resToSend.push(calientePero);
+    } catch (err) {
+      console.error(err);
+    }
+  } else if (temp < 20) {
+    try {
+      const coldProducts = await tables.products.getColdProducts();
+      resToSend.push(coldProducts);
+    } catch (err) {
+      console.error(err);
+    }
+  }
   res.json(resToSend);
-  // console.log(resToSend);
-  // console.log(weatherInfos);
+  console.log(resToSend);
+  console.log(weatherInfos);
+  next();
 };
 
 module.exports = {
