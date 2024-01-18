@@ -1,0 +1,12 @@
+.location-buttons-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  background-color: #3d3d3d !important;
+  width: 8rem;
+  a:hover {
+    background-color: #3d3d3d !important;
+  }
+}
