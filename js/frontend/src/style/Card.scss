@@ -6,50 +6,26 @@
   margin: 1rem;
   background-color: white !important;
 }
-
-.ripple {
-  background-color: #cdc4ba !important;
-  box-shadow: 0 4px 9px -4px #cdc4ba !important;
+.styleCard {
+  box-shadow: 5px 5px 5px black(255, 255, 255, 1);
 }
 
-@media screen and (min-width: 375px) {
-  .card-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: column !important;
-  }
-  .card {
-    margin: 1rem;
-    width: 288px;
-    background-color: white !important;
-  }
+.colorButton {
+  display: flex;
+  flex-direction: column;
+  background-color: #3d3d3d;
 }
 
-@media screen and (min-width: 425px) {
-  .card-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: column !important;
-  }
-  .card {
-    margin: 1rem;
-    width: 288px;
-    background-color: white !important;
-  }
+.styleText {
+  text-align: center;
+  font-family: policeTitle;
+  margin: 10px;
 }
 
-@media screen and (min-width: 728px) {
-  .card-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-direction: row !important;
-  }
-  .card {
-    margin: 1rem;
-    width: 288px;
-    background-color: white !important;
+@media screen and (min-width: 1024px) {
+  .cardAlign {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 }
