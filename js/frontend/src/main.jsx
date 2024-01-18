@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import axios from "axios";
+import axios from "axios"; // eslint-disable-line
 
 import App from "./App";
 
