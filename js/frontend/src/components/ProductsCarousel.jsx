@@ -15,7 +15,6 @@ function ProductsCarousel({ weatherProducts }) {
     }
 
     setIsRefreshing(true);
-    console.log(1, freshData, weatherProducts);
     setFreshData([]);
 
     setTimeout(() => {
@@ -25,18 +24,12 @@ function ProductsCarousel({ weatherProducts }) {
   }, [weatherProducts]);
 
   return (
-    <div style={{ minHeight: "70vh" }}>
+    <div style={{ minHeight: "70vh" }} className="carousel-container">
       {freshData?.length && (
         <MDBCarousel showControls showIndicators>
           {freshData?.map((product, index) => (
             <MDBCarouselItem itemId={index + 1} key={product?.productId}>
               <img src={product?.image} className="d-block w-100" alt="..." />
-              <MDBCarouselCaption>
-                <h5>First slide label</h5>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
-              </MDBCarouselCaption>
             </MDBCarouselItem>
           ))}
         </MDBCarousel>
