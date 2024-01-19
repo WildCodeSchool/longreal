@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk&family=Roboto:wght@300&display=swap");
+@import "mdb-react-ui-kit/dist/scss/mdb.pro.scss";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+$my-theme-primary: #4f4f4f;
+$my-theme-secondary: #e3ebf7;
+$my-dark-theme: mdb-light-theme($my-theme-primary, $my-theme-secondary);
+@include mdb-theme($my-dark-theme);
+
+body {
+  background-color: white !important;
+  color: black !important;
+  font-family: "Roboto", sans-serif !important;
+}
+
+@import "./Home.scss";
+@import "./LocationsButtons.scss";
+@import "./WelcomeWindow.scss";
+@import "./ProductsCarousel.scss";
+@import "./Card.scss";

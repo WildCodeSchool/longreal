@@ -49,7 +49,6 @@ services:
       - target: 80
         published: 8000
         protocol: tcp
-
   data-python:
     build:
       context: ./data-python
